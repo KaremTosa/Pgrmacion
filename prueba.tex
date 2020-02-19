@@ -1,7 +1,8 @@
 \documentclass{article}
 
 \usepackage[utf8]{inputenc}
-
+\usepackage{amsmath}
+\usepackage[spanish]{babel}
 \title{Apuntes de programación lineal}
 
 \author{Karem Torres Salinas}
@@ -10,8 +11,54 @@
 
 \begin{document}
 
+
 \maketitle
+\tableofcontents
+\label{sec:introduccion}
+\section{Introduccion}
+
+
 
 La forma estándar de un problema de programación lineal es: Dados una
 matriz $A$ y vectores $b,c$, maximizar $c^Tx$ sujeto a $Ax\leq b$.
+
+\subsection{Ejercicios}
+Ejercicio 1:
+Una compañia produce frutas mezcladas tiene en almacén 10,000 kilos de
+peras, 12,000 kilos de duraznos y 8,000 kilos de cerezas. La compañia
+produce tres mezclas de frutas que venden en latas de un kilo. La
+primera combinación contiene la mitad de peras y la mitad de
+duraznos. La segunda combinación contiene la mitad de cada fruta . La
+tercera combinación tiene la mitad de duraznos y la mitad de
+cerezas. Los ingresos por lata vendida por cada combinación son de 3,4
+y 5 pesos respectivamente. Platea el problema de encontrar la
+producción que da la ganancia máxima como un problema de programación
+lineal. Escribe el problema en forma estándar y en forma simplex.
+
+
+\subsection{Tabla}
+
+\begin{tabular}{|c|c|c|}
+  \hline
+  &A&B\\
+  \hline
+  Maquina1 &1&2\\
+  Maquina2 &1&1 \\
+  \hline
+\end{tabular}
+
+
+\subsection{Matriz}
+
+\begin{equation*}
+  \label{eq:1}
+ A= \begin{pmatrix}
+    1&2&3\\
+    4&4&6\\
+    7&8&9\\
+  \end{pmatrix}
+\end{equation*}
+
+
+
 \end{document}
