@@ -1,0 +1,93 @@
+\documentclass{article}
+
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+
+\title{El método simplex}
+\author{Karem Torres Salinas}
+
+\begin{document}
+\maketitle
+
+\section{Introducción}
+\label{sec:introduccion}
+El método simplex es un algoritmo para resolver problemas de
+programación lineal. Fue inventado por George Dantzing en el año 1947.
+
+\section{Ejemplo}
+\label{sec:ejemplo}
+
+Ilustraremos la aplicación del método simplex con un ejemplo.
+
+\begin{equation*}
+ \begin{aligned}
+\text{Maximizar} \quad & 2x_{1}+x_{2}\\
+\text{sujeto a} \quad &
+  \begin{aligned}
+   x_{1}-x_{2} &\leq 2\\
+   -2x_{1}+x_{2} &\leq 2\\
+   3x_{1}+4x_{2} &\leq 12\\
+   x_{1}+x_{2} &\geq 1\\
+    x_{1},x_{2} &\geq 0
+  \end{aligned}
+\end{aligned}
+\end{equation*}
+
+Como una de las desigualdades aparecen las variables de lado izquierdo
+de un símbolo mayor o igual, entonces multiplicamos ambos miembros de
+la desigualdad por $-1$ para obtener la forma estándar.
+
+
+\begin{equation*}
+ \begin{aligned}
+\text{Maximizar} \quad & 2x_{1}+x_{2}\\
+\text{sujeto a} \quad &
+  \begin{aligned}
+   x_{1}-x_{2} &\leq 2\\
+   -2x_{1}+x_{2} &\leq 2\\
+   3x_{1}+4x_{2} &\leq 12\\
+  - x_{1}-x_{2} &\leq -1\\
+    x_{1},x_{2} &\geq 0
+  \end{aligned}
+\end{aligned}
+\end{equation*}
+
+Para obtener la forma simplex, añadimos una variable de holgura por
+cada desigualdad.
+
+\begin{equation*}
+ \begin{aligned}
+\text{Maximizar} \quad & 2x_{1}+x_{2}\\
+\text{sujeto a} \quad &
+  \begin{aligned}
+   x_{1}-x_{2}+x_{3}              &  =2\\
+   -2x_{1}+x_{2}+x_{4} &=2\\
+   3x_{1}+4x_{2}+x_{5} &=    12\\
+  - x_{1}-x_{2}+x_{6} &=    -1\\
+    x_{1},x_{2},x_{3},x_{4},x_{5},x_{6} &\geq 0
+  \end{aligned}
+\end{aligned}
+\end{equation*}
+
+A continuación obtenemos un \emph{tablero simplex} despejando las
+variables de holgura.
+
+\begin{equation*}
+ \begin{aligned}
+\text{Maximizar} \quad & 2x_{1}+x_{2}\\
+\text{sujeto a} \quad &
+\begin{aligned}
+  x_{3}&= 2+-x_{1 }+x_{2} \\
+  x_{4}&=2-x_{1}-x_{2}-x_{4}\\
+  x_{5}&=12-3_{1}-4x_{2}\\
+  x_{6}=&-1+x_{1}+x_{2}\\
+  \hline
+  z&=\phantom{-1}+2x_{1}+x_{2}
+  \end{aligned}
+\end{aligned}
+\end{equation*}
+
+
+
+\end{document}
